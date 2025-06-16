@@ -1,12 +1,9 @@
-const { merge } = require('webpack-merge')
-const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin')
+const { merge } = require('webpack-merge');
+const ModuleFederationPlugin = require('webpack/lib/container/ModuleFederationPlugin');
+const packageJson = require('../package.json');
+const commonConfig = require('./webpack.common');
 
-const commonConfig = require('./webpack.common')
-const packageJson = require('../package.json')
-
-const domain = process.env.PRODUCTION_DOMAIN
-
-const productionConfig = {
+const prodConfig = {
   mode: 'production',
   output: {
     filename: '[name].[contenthash].js',
@@ -16,11 +13,11 @@ const productionConfig = {
       name: 'marketing',
       filename: 'remoteEntry.js',
       exposes: {
-        './MarketingApp': './src/bootStrap',
+        './MarketingApp': './src/bootstrap',
       },
       shared: packageJson.dependencies,
     }),
   ],
-}
+};
 
-module.exports = merge(commonConfig, productionConfig)
+module.exports = merge(commonConfig, prodConfig);

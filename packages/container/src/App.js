@@ -1,14 +1,12 @@
-import React from 'react'
-import MarketingApp from './components/MarketingApp'
+import React from 'react';
+import MarketingApp from './components/MarketingApp';
 
-const App = () => {
+export default () => {
   return (
     <div>
-      <h2>Hi there..!</h2>
+      <h1>Hi there!</h1>
       <hr />
       <MarketingApp />
     </div>
-  )
-}
-
-export default App
+  );
+};
