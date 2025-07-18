@@ -8,14 +8,14 @@ import {
 import Landing from './components/Landing'
 import Pricing from './components/Pricing'
 
-const generateGenerateClassName = createGenerateClassName({
+const generateClassName = createGenerateClassName({
   productionPrefix: 'ma',
 })
 
 const App = () => {
   return (
     <div>
-      <StylesProvider generateGenerateClassName={generateGenerateClassName}>
+      <StylesProvider generateClassName={generateClassName}>
         <BrowserRouter>
           <Switch>
             <Route
