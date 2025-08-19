@@ -4,6 +4,11 @@ import App from './App'
 import { createMemoryHistory, createBrowserHistory } from 'history'
 
 const mount = (el, { onNavigate, defaultHistory, initialPath }) => {
+  console.log('🚀 ~ Marketing mount ~ :', {
+    onNavigate,
+    defaultHistory,
+    initialPath,
+  })
   const history =
     defaultHistory ||
     createMemoryHistory({
