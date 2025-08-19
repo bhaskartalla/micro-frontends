@@ -18,7 +18,6 @@ const AuthApp = ({ onSignIn }) => {
         },
         onSignIn,
       }
-      console.log('🚀 ~ AuthApp ~ config:', config)
 
       const { onParentNavigate } = mount(ref.current, config)
       if (onParentNavigate) {

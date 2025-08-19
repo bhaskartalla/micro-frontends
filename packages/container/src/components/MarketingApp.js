@@ -17,7 +17,6 @@ const MarketingApp = () => {
           }
         },
       }
-      console.log('🚀 ~ MarketingApp ~ config:', config)
       const { onParentNavigate } = mount(ref.current, config)
 
       if (onParentNavigate) {
