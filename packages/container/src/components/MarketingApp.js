@@ -8,7 +8,7 @@ const MarketingApp = () => {
 
   useEffect(() => {
     if (ref) {
-      const { onParentNavigate } = mount(ref.current, {
+      const config = {
         initialPath: history.location.pathname,
         onNavigate: ({ pathname: nextPathname }) => {
           const { pathname } = history.location
@@ -16,7 +16,10 @@ const MarketingApp = () => {
             history.push(nextPathname)
           }
         },
-      })
+      }
+      console.log('🚀 ~ MarketingApp ~ config:', config)
+      const { onParentNavigate } = mount(ref.current, config)
+
       if (onParentNavigate) {
         history.listen(onParentNavigate)
       }

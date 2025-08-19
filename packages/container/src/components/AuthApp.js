@@ -8,7 +8,7 @@ const AuthApp = ({ onSignIn }) => {
 
   useEffect(() => {
     if (ref) {
-      const { onParentNavigate } = mount(ref.current, {
+      const config = {
         initialPath: history.location.pathname,
         onNavigate: ({ pathname: nextPathname }) => {
           const { pathname } = history.location
@@ -17,7 +17,10 @@ const AuthApp = ({ onSignIn }) => {
           }
         },
         onSignIn,
-      })
+      }
+      console.log('🚀 ~ AuthApp ~ config:', config)
+
+      const { onParentNavigate } = mount(ref.current, config)
       if (onParentNavigate) {
         history.listen(onParentNavigate)
       }
